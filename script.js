@@ -1,5 +1,8 @@
 'use strict';
 
+// DATA
+// ==================================================================
+
 const sliderItems = [
   {
     name: 'Tanya Sinclair',
@@ -15,6 +18,52 @@ const sliderItems = [
     bio: `“ If you want to lay the best foundation possible I’d recommend taking this course. 
     The depth the instructors go into is incredible. I now feel so confident about 
     starting up as a professional developer. ”`,
-    avatar: 'image-tanya.jpg',
+    avatar: 'image-john.jpg',
   },
 ];
+
+// ELEMENTS
+// =====================================================================
+const aboutEl = document.querySelector('.wrapper');
+const imageEl = document.querySelector('.picture');
+const btnPrev = document.querySelector('.btn-prev');
+const btnNext = document.querySelector('.btn-next');
+
+const createAboutEl = current => {
+  return `
+    <div class="wrapper">
+      <blockquote>${current.bio}</blockquote>
+      <div class="person">
+        <p>${current.name}<span>${current.job}</span></p>
+      </div>
+    </div>`;
+};
+
+const createImageEl = current =>
+  `<img src="./images/${current.avatar}" alt="${current.name}" />`;
+
+const changeSlider = current => {
+  const about = createAboutEl(current);
+  const image = createImageEl(current);
+
+  aboutEl.innerHTML = about;
+  imageEl.innerHTML = image;
+};
+
+let currentItem = sliderItems[0];
+btnNext.addEventListener('click', () => {
+  const index = sliderItems.indexOf(currentItem);
+
+  currentItem =
+    index < sliderItems.length - 1 ? sliderItems[index + 1] : sliderItems[0];
+
+  changeSlider(currentItem);
+});
+
+btnPrev.addEventListener('click', () => {
+  const index = sliderItems.indexOf(currentItem);
+
+  currentItem = index > 0 ? sliderItems[index - 1] : sliderItems.at(-1);
+
+  changeSlider(currentItem);
+});
