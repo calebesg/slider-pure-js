@@ -1,0 +1,83 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sr-only {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.container {
+  max-width: 1100px;
+  max-height: 570px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ABOUT */
+/* ==================================================== */
+
+.about {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.about .wrapper {
+  animation: slide-right 1.4s;
+}
+.about .wrapper.out {
+  animation: slide-right 1.4s reverse;
+}
+
+.image-control {
+  flex: 1 1 auto;
+}
+
+img {
+  width: 100%;
+  animation: slide-rotate 1s;
+}
+img.out {
+  animation: lide-rotate 1s reverse;
+}
+
+@keyframes slide-rotate {
+  from {
+    opacity: 0;
+    transform: rotate(20deg) translate(-40px);
+    transform-origin: bottom;
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(0) translate(0);
+    transform-origin: bottom;
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-300px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
