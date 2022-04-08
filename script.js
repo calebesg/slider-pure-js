@@ -24,18 +24,16 @@ const sliderItems = [
 
 // ELEMENTS
 // =====================================================================
-const aboutEl = document.querySelector('.wrapper');
+const aboutEl = document.querySelector('.about-wrap');
 const imageEl = document.querySelector('.picture');
 const btnPrev = document.querySelector('.btn-prev');
 const btnNext = document.querySelector('.btn-next');
 
 const createAboutEl = current => {
   return `
-    <div class="wrapper">
+    <div class="about-content">
       <blockquote>${current.bio}</blockquote>
-      <div class="person">
-        <p>${current.name}<span>${current.job}</span></p>
-      </div>
+      <strong>${current.name} <span>${current.job}</span></strong>
     </div>`;
 };
 
