@@ -32,25 +32,35 @@ body {
 /* ==================================================== */
 
 .about {
+  position: relative;
   display: flex;
   align-items: center;
-  overflow: hidden;
 }
 
 .about .wrapper {
-  animation: slide-right 1.4s;
+  position: absolute;
+  width: 100%;
+  animation: slide-right 1.2s;
+  z-index: 100;
 }
 .about .wrapper.out {
   animation: slide-right 1.4s reverse;
 }
 
+.wrapper blockquote {
+  width: 120%;
+}
+
+/* IMAGE SLIDER */
+/* ============================================================ */
+
 .image-control {
-  flex: 1 1 auto;
 }
 
 img {
   width: 100%;
-  animation: slide-rotate 1s;
+  border-radius: 8px;
+  animation: slide-rotate 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 img.out {
   animation: lide-rotate 1s reverse;
@@ -59,6 +69,7 @@ img.out {
 @keyframes slide-rotate {
   from {
     opacity: 0;
+
     transform: rotate(20deg) translate(-40px);
     transform-origin: bottom;
   }
