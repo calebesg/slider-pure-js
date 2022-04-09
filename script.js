@@ -44,8 +44,16 @@ const changeSlider = current => {
   const about = createAboutEl(current);
   const image = createImageEl(current);
 
-  aboutEl.innerHTML = about;
-  imageEl.innerHTML = image;
+  const oldAbout = Array.from(aboutEl.childNodes).at(1);
+  const oldImage = Array.from(imageEl.childNodes).at(0);
+
+  oldAbout.classList.toggle('out');
+  oldImage.classList.toggle('out');
+
+  setTimeout(() => {
+    aboutEl.innerHTML = about;
+    imageEl.innerHTML = image;
+  }, 740);
 };
 
 let currentItem = sliderItems[0];

@@ -13,13 +13,9 @@
 }
 
 body {
-  min-height: 100vh;
   font-size: 2rem;
   color: var(--blue-600);
   font-family: 'Inter', sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: url(./images/pattern-curve.svg) no-repeat;
   background-position: bottom left;
 }
@@ -41,6 +37,14 @@ body {
 
 /* ABOUT */
 /* ==================================================== */
+main {
+  overflow: hidden;
+  width: 100%;
+  min-height: calc(100vh - 1px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .about-wrap {
   position: relative;
@@ -55,9 +59,11 @@ body {
   width: 100%;
   animation: slide-right 1.2s;
   z-index: 100;
+  transition: all 0.8s;
 }
 .about-content.out {
-  animation: slide-right 1.4s reverse;
+  transform: translate(-300px);
+  opacity: 0;
 }
 
 blockquote {
@@ -95,9 +101,12 @@ span {
   width: 100%;
   border-radius: 8px;
   animation: slide-rotate 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.9s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 .picture img.out {
-  animation: lide-rotate 1s reverse;
+  transform-origin: top;
+  transform: rotate(-45deg) translate(100px);
+  opacity: 0;
 }
 
 .group-button {
