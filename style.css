@@ -158,3 +158,82 @@ span {
     transform: translateX(0);
   }
 }
+
+@media (max-width: 800px) {
+  body {
+    background-size: 80%;
+  }
+
+  main {
+    min-height: 100vh;
+    align-items: flex-start;
+  }
+
+  .container {
+    margin-top: 4rem;
+    max-width: 85%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .image-control {
+    padding: 0 2rem;
+    position: relative;
+  }
+  .image-control::before {
+    content: '';
+  }
+
+  .picture::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url(./images/pattern-bg.svg) no-repeat;
+    background-size: contain;
+    transform: scale(1.15) translate(20px, -6px);
+    z-index: -1;
+  }
+
+  .about-wrap {
+    background-size: 3.5rem;
+    background-position: center 25%;
+  }
+
+  .about-content {
+    margin-top: 5rem;
+    position: inherit;
+    display: block;
+    font-size: 1.125rem;
+    text-align: center;
+  }
+  .about-content.out {
+    transform: translate(300px);
+    opacity: 0;
+  }
+
+  blockquote {
+    width: 100%;
+  }
+
+  strong {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  span {
+    display: block;
+  }
+
+  .group-button {
+    bottom: -0.5rem;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 1.25rem;
+    box-shadow: 0 0.25rem 1rem var(--blue-200);
+  }
+
+  .btn {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
