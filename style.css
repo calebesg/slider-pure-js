@@ -29,7 +29,6 @@ body {
 
 .container {
   max-width: 1100px;
-  max-height: 570px;
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -49,9 +48,10 @@ main {
 .about-wrap {
   position: relative;
   display: flex;
+  height: 100vh;
   align-items: center;
   background: url(./images/pattern-quotes.svg) no-repeat;
-  background-position: 25% 15%;
+  background-position: 25% 30%;
 }
 
 .about-content {
@@ -88,12 +88,15 @@ span {
 /* ============================================================ */
 .image-control {
   position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 .image-control::before {
   content: url(./images/pattern-bg.svg);
   position: absolute;
-  transform: translateX(-10%) translateY(-10%);
+  transform: translateX(-10%);
   z-index: -1;
 }
 
@@ -112,7 +115,7 @@ span {
 .group-button {
   position: absolute;
   display: flex;
-  bottom: -1.25rem;
+  bottom: 7rem;
   left: 60px;
   border-radius: 1.75rem;
   box-shadow: 0 0.5rem 2rem var(--blue-200);

@@ -25,7 +25,7 @@ const sliderItems = [
 // ELEMENTS
 // =====================================================================
 const aboutEl = document.querySelector('.about-wrap');
-const imageEl = document.querySelector('.picture');
+const imageWrapper = document.querySelector('.picture');
 const btnPrev = document.querySelector('.btn-prev');
 const btnNext = document.querySelector('.btn-next');
 
@@ -37,22 +37,23 @@ const createAboutEl = current => {
     </div>`;
 };
 
-const createImageEl = current =>
-  `<img src="./images/${current.avatar}" alt="${current.name}" />`;
+const createImageEl = current => {
+  return `<img src="./images/${current.avatar}" alt="${current.name}" />`;
+};
 
 const changeSlider = current => {
   const about = createAboutEl(current);
   const image = createImageEl(current);
 
   const oldAbout = Array.from(aboutEl.childNodes).at(1);
-  const oldImage = Array.from(imageEl.childNodes).at(0);
+  const oldImage = imageWrapper.querySelector('img');
 
   oldAbout.classList.toggle('out');
   oldImage.classList.toggle('out');
 
   setTimeout(() => {
     aboutEl.innerHTML = about;
-    imageEl.innerHTML = image;
+    imageWrapper.innerHTML = image;
   }, 740);
 };
 
