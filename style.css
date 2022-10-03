@@ -173,15 +173,18 @@ span {
   }
 
   .container {
-    margin-top: 4rem;
+    margin-top: 1rem;
     max-width: 85%;
     display: flex;
+    padding-bottom: 4rem;
     flex-direction: column-reverse;
   }
 
   .image-control {
     padding: 0 2rem;
+    height: 400px;
     position: relative;
+    justify-content: center;
   }
   .image-control::before {
     content: '';
@@ -193,12 +196,17 @@ span {
     inset: 0;
     background: url(./images/pattern-bg.svg) no-repeat;
     background-size: contain;
-    transform: scale(1.15) translate(20px, -6px);
+    transform: scale(1.15) translateY(2.5rem);
     z-index: -1;
+  }
+
+  .picture img {
+    width: 280px;
   }
 
   .about-wrap {
     background-size: 3.5rem;
+    height: auto;
     background-position: center 25%;
   }
 
@@ -228,7 +236,7 @@ span {
   }
 
   .group-button {
-    bottom: -0.5rem;
+    bottom: 3rem;
     left: 50%;
     transform: translate(-50%);
     border-radius: 1.25rem;
